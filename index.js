@@ -28,6 +28,7 @@ app.use(cors());
 app.use(bodyParser.json());
 //router
 require("./src/models/user/userRouter")(app);
+require("./src/models/department/departmentRouter")(app);
 
 //start server
 start();

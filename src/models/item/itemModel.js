@@ -6,6 +6,7 @@ const itemScehma = new mongoose.Schema({
   reviews: Number,
   description: String,
   own: { type: mongoose.Schema.Types.ObjectId, ref: "Kart" },
+  department: { type: mongoose.Schema.Types.ObjectId, ref: "Department" },
 });
 
 module.exports = mongoose.model("Item", itemScehma);

@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const express = require("express");
 const jwt = require("jsonwebtoken");
 
 const userSchema = new mongoose.Schema({
@@ -13,10 +12,11 @@ userSchema.methods.generateAuthToken = async function () {
   const token = jwt.sign(
     {
       username: this.Username,
+      password: this.password,
     },
     process.env.APP_KEY
   );
-  console.log("auth here");
+
   return token;
 };
 
