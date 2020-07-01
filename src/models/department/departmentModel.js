@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const departmentSchema = new mongoose.Schema({
-  title: { type: String, required: true },
+  depName: { type: String, required: true },
   items: [{ type: mongoose.Schema.Types.ObjectId, ref: "Item" }],
 });
 
