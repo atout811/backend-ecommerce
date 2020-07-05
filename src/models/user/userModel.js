@@ -5,7 +5,14 @@ const userSchema = new mongoose.Schema({
   Username: { type: String, minlength: 3, maxlength: 15, required: true },
   password: { type: String, minlength: 6, required: true },
   email: { type: String, required: true },
-  kart: { type: mongoose.Schema.Types.ObjectId, ref: "Kart" },
+  kart: [
+    {
+      itemName: String,
+      review: Number,
+      description: String,
+      price: Number,
+    },
+  ],
 });
 
 userSchema.methods.generateAuthToken = async function () {

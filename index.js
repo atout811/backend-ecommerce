@@ -29,8 +29,6 @@ app.use(bodyParser.json());
 //router
 require("./src/models/user/userRouter")(app);
 require("./src/models/department/departmentRouter")(app);
-require("./src/models/item/itemRouter")(app);
-require("./src/models/kart/kartRouter")(app);
 
 //start server
 start();

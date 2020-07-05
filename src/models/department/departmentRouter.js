@@ -1,8 +1,18 @@
-const { retrive, createDep } = require("./departmentController");
+const {
+  retrive,
+  createDep,
+  addItem,
+  deleteItem,
+} = require("./departmentController");
 
 const depRouter = app => {
-  app.get("/departments/:depName", retrive);
-  app.post("/departments/:depName", createDep);
+  app.route("/departments/:depName").get(retrive).post(createDep);
+
+  app
+    .route("/departments/items/:itemName")
+    .get(addItem)
+    .post(addItem)
+    .delete(deleteItem);
 };
 
 module.exports = depRouter;
