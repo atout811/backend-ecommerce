@@ -3,6 +3,7 @@ const {
   createDep,
   addItem,
   deleteItem,
+  updateItem,
 } = require("./departmentController");
 
 const depRouter = app => {
@@ -12,7 +13,8 @@ const depRouter = app => {
     .route("/departments/items/:itemName")
     .get(addItem)
     .post(addItem)
-    .delete(deleteItem);
+    .delete(deleteItem)
+    .put(updateItem);
 };
 
 module.exports = depRouter;

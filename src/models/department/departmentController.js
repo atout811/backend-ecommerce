@@ -92,9 +92,14 @@ const depController = {
       );
       console.log(item);
       if (item) {
-        item.quantity += 1;
+        if (req.body.itemName) item.itemName = req.body.itemName;
+        if (req.body.review) item.review = req.body.review;
+        if (req.body.description) item.description = req.body.description;
+        if (req.body.price) item.price = req.body.price;
+        if (req.body.quantity) item.quantity = req.body.quantity;
+
         await department.save();
-        return res.send("Item increased ...");
+        return res.send("Item updated ...");
       }
     } catch (e) {
       res.send(e.message);
